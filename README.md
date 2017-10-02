@@ -58,11 +58,11 @@ example of how to build a connection. first, both need to instantiate their conn
 
 ```js
 bobs_connection = new WebRTCConnection(
-      ()=>console.log("bob":open"),
-      ()=>console.log("bob":close"),
-      ()=>console.log("bob":standby"),
+      ()=>console.log("bob:open"),
+      ()=>console.log("bob:close"),
+      ()=>console.log("bob:standby"),
       (message)=>{
-          console.log("bob" receives:");
+          console.log("bob receives:");
           console.log(message)
       },
   );
@@ -72,11 +72,11 @@ bobs_connection = new WebRTCConnection(
 alice writes:
 ```js
 alices_connection = new WebRTCConnection(
-      ()=>console.log("alice":open"),
-      ()=>console.log("alice":close"),
-      ()=>console.log("alice":standby"),
+      ()=>console.log("alice:open"),
+      ()=>console.log("alice:close"),
+      ()=>console.log("alice:standby"),
       (message)=>{
-          console.log("alice" receives:");
+          console.log("alice receives:");
           console.log(message)
       },
   );
