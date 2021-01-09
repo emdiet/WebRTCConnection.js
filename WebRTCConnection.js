@@ -40,7 +40,7 @@ class WebRTCConnection {
             "WebRTCConnectionUtility-1.0"
         );
         this.peerConnection.utilityDataChannel.onmessage = (event) => this.doOnMessage(event);
-        if(this.peerConnection.localDescription.sdp) throw "offer or answer already made! (o)";
+        if(this.peerConnection.localDescription?.sdp) throw "offer or answer already made! (o)";
         this.peerConnection.createOffer().then(description =>
             this.peerConnection.setLocalDescription(description)
         );
@@ -74,7 +74,7 @@ class WebRTCConnection {
                 throw "incompatible WebRTCConnections! (a)"
             }
         };
-        if(this.peerConnection.localDescription.sdp) throw "offer or answer already made! (a)";
+        if(this.peerConnection.localDescription?.sdp) throw "offer or answer already made! (a)";
         this.peerConnection.setRemoteDescription(
             new RTCSessionDescription({
                 type:"offer",
